@@ -1,12 +1,19 @@
 package jp.wasshoy.nitsuki.domain.services;
 
 import jp.wasshoy.nitsuki.domain.models.Entry;
+import jp.wasshoy.nitsuki.domain.repositories.BlogRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BlogServiceImpl implements BlogService {
+    private final BlogRepository blogRepository;
+
+    public BlogServiceImpl(BlogRepository blogRepository) {
+        this.blogRepository = blogRepository;
+    }
+
     @Override
     public List<Entry> findAllEntries(int page, int size) {
         // TODO: 全件取得（パラメーター無視）
@@ -24,7 +31,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Entry getEntry(int id) {
         // TODO: エントリー1件取得
-        return null;
+        return blogRepository.getReferenceById(id);
     }
 
     @Override

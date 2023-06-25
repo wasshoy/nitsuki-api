@@ -4,8 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.Date;
+
+import lombok.Builder;
 import lombok.Getter;
 
+@Builder
 @Entity
 @Table(name = "post")
 @Getter

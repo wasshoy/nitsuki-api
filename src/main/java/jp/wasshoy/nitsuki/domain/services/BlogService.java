@@ -1,7 +1,6 @@
 package jp.wasshoy.nitsuki.domain.services;
 
 import java.util.List;
-
 import jp.wasshoy.nitsuki.domain.models.Entry;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;

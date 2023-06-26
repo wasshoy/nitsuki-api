@@ -32,6 +32,5 @@ public class EntryEntity {
   https://openjpa.apache.org/builds/3.2.2/apache-openjpa/docs/jpa_overview_pc.html
    */
   @SuppressWarnings("unused")
-  public EntryEntity() {
-  }
+  public EntryEntity() {}
 }

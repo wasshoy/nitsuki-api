@@ -31,14 +31,13 @@ public class BlogServiceImpl implements BlogService {
   public Entry getEntry(int id) {
     // TODO: 指定したIDでエントリーが存在しない場合例外を投げる
     final var entryEntity = blogRepository.findById(id).orElseThrow();
-    return Entry.builder()
-        .id(entryEntity.getId())
-        .title(entryEntity.getTitle())
-        .content(entryEntity.getContent())
-        .createdAt(entryEntity.getCreatedAt())
-        .updatedAt(entryEntity.getUpdatedAt())
-        .published(entryEntity.getPublished())
-        .build();
+    return new Entry(
+        entryEntity.getId(),
+        entryEntity.getTitle(),
+        entryEntity.getContent(),
+        entryEntity.getCreatedAt(),
+        entryEntity.getUpdatedAt(),
+        entryEntity.getPublished());
   }
 
   @Override

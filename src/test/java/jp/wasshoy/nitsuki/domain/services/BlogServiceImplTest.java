@@ -33,14 +33,6 @@ class BlogServiceImplTest {
 
     assertThat(actual)
         .usingRecursiveComparison()
-        .isEqualTo(
-            Entry.builder()
-                .id(1)
-                .title("title")
-                .content("content")
-                .createdAt(null)
-                .updatedAt(null)
-                .published(false)
-                .build());
+        .isEqualTo(new Entry(1, "title", "content", null, null, false));
   }
 }
